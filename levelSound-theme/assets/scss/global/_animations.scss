@@ -1,0 +1,52 @@
+
+//      *Intro anim
+// =================================================
+
+
+
+#gIntroAnim_Rec1{
+    @include anim_rect(var(--anim-size1));
+}
+#gIntroAnim_Rec2{
+    @include anim_rect(var(--anim-size2));
+}
+#gIntroAnim_Rec3{
+    @include anim_rect(var(--anim-size3));
+}
+#gIntroAnim_Rec4{
+    @include anim_rect(var(--anim-size4));
+}
+#gIntroAnim_Rec5{
+    @include anim_rect(var(--anim-size5));
+}
+#gIntroAnim_Rec6{
+    @include anim_rect(var(--anim-size6));
+}
+#gIntroAnim_Rec7{
+    @include anim_rect(var(--anim-size7));
+}
+
+@keyframes anim__textRound {
+    0%   {transform: rotate(0deg);}
+    50%  {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

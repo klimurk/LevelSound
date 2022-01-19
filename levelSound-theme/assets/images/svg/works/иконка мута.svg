@@ -1,0 +1,6 @@
+<svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 2L8 9H1V17H8L16 24V2Z" stroke="#FF0000"/>
+<rect x="12" y="8" width="9" height="10" fill="white"/>
+<rect x="18.707" y="10" width="1" height="8" transform="rotate(45 18.707 10)" fill="#EA0F0F"/>
+<rect width="1" height="8" transform="matrix(-0.707107 0.707107 0.707107 0.707107 13.707 10)" fill="#EA0F0F"/>
+</svg>

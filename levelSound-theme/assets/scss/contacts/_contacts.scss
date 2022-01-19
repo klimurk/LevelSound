@@ -1,0 +1,744 @@
+.contacts {
+    overflow-x: hidden;
+    position: relative;
+    height: auto;
+    flex: 1;
+    @media(max-width: $width_adaptive) {
+        height: auto;
+    }
+    >img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+        z-index: 0;
+        // margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    &__inner {
+        @include makeitflex(row, space-between);
+        @media(max-width: $width_adaptive) {
+            flex-direction: column-reverse;
+        }
+    }
+    &__col {
+        padding: 5rem 0 10rem;
+        width: 50%;
+        height: 100%;
+        @media(max-width: $width_adaptive) {
+            width: 100%;
+            padding: 2rem 0;
+        }
+        .casseteback {
+            display: inline-block;
+            z-index: 1;
+            position: relative;
+            // border: 5px solid $themecolor1;
+            overflow: hidden;
+            // todo delete
+            height: 27vw;
+            width: 90%;
+            @media(max-width: $width_adaptive) {
+                height: 64vw;
+                width: 100%;
+            }
+            >img {
+                // display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                z-index: 4;
+                // margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+            >svg {
+                z-index: 5;
+                position: absolute;
+                top: -20%;
+                right: -10%;
+                width: 40%;
+                height: 61.5724%;
+                animation: anim__textRound 30s infinite running linear;
+            }
+            &_1 {
+                @include makeitflex(row, space-between);
+                height: 65%;
+                padding: 2% 6%;
+                z-index: 5;
+                color: $themecolor2;
+                >div {
+                    @include makeitflex(column, flex-start);
+                    z-index: inherit;
+                    .casseteBack_table {
+                        @include makeitflex(row, flex-start);
+                        z-index: inherit;
+                        height: 65%;
+                        border: 3px solid $themecolor2;
+                    }
+                    .casseteBack_compact {
+                        z-index: inherit;
+                        @include makeitflex(column, center);
+                        height: 35%;
+                        width: 50%;
+                    }
+                }
+            }
+            &_2 {
+                @include makeitflex(column, center);
+                z-index: 6;
+                height: 10%;
+                position: relative;
+                // background-color: $themecolor2;
+                font-family: 'AlteHaasGrotesk';
+                font-size: 1vw;
+                font-weight: bold;
+                font-style: normal;
+                // line-height: 2.5;
+                letter-spacing: 0.45vw;
+                text-align: center;
+                color: $backgroundMain;
+                text-transform: uppercase;
+                cursor: default;
+                @media(max-width: $width_adaptive) {
+                    font-size: 2.5vw;
+                    letter-spacing: 0.9vw;
+                }
+            }
+            &_3 {
+                @include makeitflex(row, flex-end);
+                z-index: 5;
+                height: 25%;
+                padding: 3% 7% 2%;
+                &_col {
+                    z-index: inherit;
+                    &.second {
+                        z-index: inherit;
+                        @include makeitflex(column, space-between);
+                        width: 63%;
+                        text-align: center;
+                        >a {
+                            @extend %text;
+                            z-index: inherit;
+                            color: $themecolor2;
+                            text-transform: uppercase;
+                            font-size: 0.6vw;
+                            letter-spacing: 1px;
+                            transition: color $transition_time linear;
+                            &:hover {
+                                z-index: inherit;
+                                color: $themecolor1;
+                            }
+                            @media(max-width:$width_adaptive) {
+                                font-size: 1.5vw;
+                            }
+                        }
+                    }
+                    &.third {
+                        z-index: inherit;
+                        @include makeitflex(row, space-between);
+                        flex-wrap: wrap;
+                        width: 20%;
+                        >a {
+                            // @include social__link*
+                            z-index: inherit;
+                            @include social__link($themecolor2, transparent, $backgroundMain, $themecolor1);
+                            width: 40%;
+                            height: 60%;
+                            text-align: center;
+                            >svg {
+                                height: 80%;
+                                max-width: 100%;
+                                margin: 10%;
+                            }
+                        }
+                        >div {
+                            z-index: inherit;
+                            @include makeitflex(column, flex-end);
+                            width: 100%;
+                            text-align: center;
+                            color: $themecolor2;
+                            text-transform: uppercase;
+                            font-family: 'AlteHaasGrotesk';
+                            font-weight: bold;
+                            font-style: normal;
+                            font-size: 1vw;
+                            cursor: default;
+                            @media(max-width: $width_adaptive) {
+                                font-size: 2.3vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .casseteside {
+            margin-top: 5rem;
+            // display: block;
+            width: 90%;
+            position: relative;
+            @media(max-width: $width_adaptive) {
+                width: 100%;
+            }
+            >img {
+                // margin: 0 auto;
+                width: 100%;
+                z-index: 1;
+            }
+            &__links {
+                @include makeitflex(row, space-between);
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-60%);
+                height: 100%;
+                width: 60%;
+                >a {
+                    z-index: 2;
+                    @include social__link($backgroundMain, $themecolor1, $themecolor2, $themecolor1);
+                    width: 3vw;
+                    height: 3vw;
+                    margin: auto 5%;
+                    text-align: center;
+                    padding: 1.5% 0;
+                    @media(max-width: $width_adaptive) {
+                        width: 7vw;
+                        height: 7vw;
+                    }
+                    >svg {
+                        margin: auto;
+                        max-height: 90%;
+                        max-width: 90%;
+                    }
+                }
+            }
+            #form_topNum {
+                z-index: 5;
+                position: absolute;
+                top: 22%;
+                left: 5%;
+                opacity: 0.8;
+                font-family: 'Monument Extended', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 0.45vw;
+                color: $themecolor2;
+                cursor: default;
+                @media(max-width: $width_adaptive) {
+                    font-size: 1.1vw;
+                }
+            }
+            &_text {
+                color: $themecolor2;
+                text-transform: uppercase;
+                position: absolute;
+                bottom: 39%;
+                right: 14.5%;
+                font-size: 0.5vw;
+                cursor: default;
+                @media(max-width: $width_adaptive) {
+                    font-size: 1.2vw;
+                }
+            }
+        }
+        .form {
+            display: inline-block;
+            position: relative;
+            background-color: $themecolor2;
+            width: 50%;
+            margin: 0 25%;
+            padding: 1vw 1.5vw;
+            @media(max-width: $width_adaptive) {
+                width: 100vw;
+                margin-left: -10px;
+                margin-bottom: 6vw;
+            }
+            &__nums {
+                // position: absolute;
+                color: $backgroundMain;
+                font-family: 'Monument Extended', sans-serif;
+                line-height: 1;
+                font-size: 0.8vw;
+                margin-bottom: 1vw;
+                @media(max-width: $width_adaptive) {
+                    font-size: 2vw;
+                }
+            }
+            &_title {
+                @extend %text;
+                text-align: center;
+                font-weight: 400;
+                font-size: 24/1920*100vw;
+                line-height: 1;
+                @media(max-width: $width_adaptive) {
+                    font-size: 6vw;
+                }
+            }
+            &_write {
+                @include makeitflex(column, flex-start);
+                // display: flex;
+                position: relative;
+                width: 86%;
+                margin: 1vw auto;
+                // top: 17%;
+                // left: 13%;
+                @media(max-width: $width_adaptive) {
+                    // width: 45%;
+                }
+                .contacts_form_input,
+                .contacts_form_select,
+                .contacts_form_comment {
+                    @extend %text;
+                    @include makeitflex(column, center);
+                    position: relative;
+                    font-size: 1vw;
+                    line-height: 1.45;
+                    margin: 1vw 0;
+                    text-transform: uppercase;
+                    height: 2.5vw;
+                    text-indent: 10px;
+                    color: $themecolor2;
+                    background-color: $backgroundMain;
+                    border: none;
+                    @media(max-width: $width_adaptive) {
+                        margin: 3vw 0;
+                        height: 6.5vw;
+                        font-size: 2.8vw;
+                        line-height: 1.5;
+                    }
+                    >span {
+                        width: 100%;
+                        // height: 100%;
+                        >input,
+                        >select,
+                        >textarea {
+                            background-color: transparent;
+                            color: $themecolor2;
+                            width: 90%;
+                            border: none;
+                            outline: none !important;
+                            &::placeholder {
+                                color: $themecolor2;
+                                opacity: 1;
+                            }
+                        }
+                        >textarea {
+                            overflow-y: scroll;
+                            height: 100%;
+                            width: 103%;
+                            padding-right: 1vw;
+                            resize: none;
+                            &::-webkit-scrollbar {
+                                width: 0.5vw;
+                                resize: none;
+                            }
+                            &::-webkit-scrollbar-track {
+                                background: $themecolor2;
+                                resize: none;
+                            }
+                            &::-webkit-scrollbar-thumb {
+                                background-color: $themecolor1;
+                                border-radius: 0;
+                                border: 0px solid transparent;
+                                resize: none;
+                            }
+                        }
+                        >select {
+                            >option {
+                                background-color: $backgroundMain;
+                                color: $themecolor2;
+                            }
+                        }
+                    }
+                }
+                .contacts_form_comment {
+                    text-indent: 8px;
+                    height: 5vw;
+                    @media(max-width: $width_adaptive) {
+                        height: 10vw;
+                    }
+                    &>span {
+                        height: 95%;
+                    }
+                }
+                .contacts_form_btn {
+                    width: 134%;
+                    transform: translate(-12.5%, 10vw);
+                    padding: 0%;
+                    font-size: 1.5vw;
+                    height: 2.5vw;
+                    position: absolute;
+                    left: -0%;
+                    bottom: -0;
+                    line-height: 1.45;
+                    @media(max-width: $width_adaptive) {
+                        width: 80vw;
+                        // transform: translate(-8%, 300%);
+                        left: 5%;
+                        bottom: -6vw;
+                        height: 6.5vw;
+                        font-size: 2.8vw;
+                        line-height: 1.5;
+                    }
+                    >input {
+                        height: 100%;
+                        width: 100%;
+                        background-color: transparent;
+                        color: $themecolor2;
+                        border: none;
+                    }
+                    .ajax-loader {
+                        display: none;
+                    }
+                }
+                .contacts_form_calendar {
+                    @include makeitflex(column, center);
+                    position: relative;
+                    font-size: 1vw;
+                    line-height: 1.45;
+                    margin: 1vw 0;
+                    text-transform: uppercase;
+                    height: 2.5vw;
+                    text-indent: 10px;
+                    color: $themecolor2;
+                    background-color: $backgroundMain;
+                    @media(max-width: $width_adaptive) {
+                        margin: 3vw 0;
+                        height: 6.5vw;
+                        font-size: 2.8vw;
+                        line-height: 1.5;
+                    }
+                    >span {
+                        width: 100%;
+                        >input,
+                        >select {
+                            background-color: transparent;
+                            color: $themecolor2;
+                            width: 90%;
+                            border: none;
+                            &::placeholder {
+                                color: $themecolor2;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            &_text {
+                @extend %text;
+                width: 100%;
+                text-align: center;
+                margin: 1vw 0 2vw;
+                font-size: 0.8vw;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                @media(max-width: $width_adaptive) {
+                    font-size: 1.8vw;
+                    margin: 0vw 0 2vw;
+                }
+            }
+            >svg {
+                width: 1vw;
+                height: 1vw;
+                @media(max-width: $width_adaptive) {
+                    width: 3vw;
+                    height: 3vw;
+                }
+            }
+            >svg:last-child {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                height: calc(var(--resizeVh, 1vh)*3);
+                @media(max-width: $width_adaptive) {
+                    height: calc(var(--resizeVh, 1vh)*1);
+                    fill: NONE;
+                    background-image: URL('./assets/images/svg/strichMOB.svg');
+                }
+            }
+            >button {
+                position: absolute;
+                right: 3vw;
+                top: 5%;
+                width: 5%;
+                height: 3vw;
+                background-color: transparent;
+                padding: 0;
+                border: none;
+                >svg {
+                    width: 100%;
+                    height: 100%;
+                    transition: stroke $transition_time linear;
+                    >rect {
+                        transition: fill $transition_time linear;
+                    }
+                    &:hover {
+                        >rect {
+                            fill: $themecolor1;
+                        }
+                        stroke: $themecolor1;
+                    }
+                }
+            }
+            .wpcf7-not-valid-tip {
+                @extend %text;
+                position: absolute;
+                top: 180%;
+                font-size: 0.7vw;
+                @media(max-width: $width_adaptive) {
+                    font-size: 1.7vw;
+                }
+            }
+            .wpcf7-response-output {
+                display: none;
+            }
+        }
+    }
+    &__btn {
+        margin: 0 auto;
+        width: 50%;
+        margin-top: 2rem;
+        @media(max-width: $width_adaptive) {
+            margin-top: 2rem;
+            margin-left: -10px;
+            width: 100vw;
+        }
+    }
+}
+
+.xdsoft_datetimepicker {
+    // display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    // height: 100% !important;
+    z-index: 50 !important;
+    @media(max-width: $width_adaptive) {
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        // height: 100% !important;
+    }
+    .xdsoft_datepicker {
+        margin: 0 !important;
+        width: 100% !important;
+        height: auto;
+        .xdsoft_monthpicker {
+            @include makeitflex(row,
+            center);
+            background-color: $backgroundMain;
+            color: $themecolor2;
+            align-items: center;
+            .xdsoft_prev {
+                background-position: 0;
+                opacity: 1 !important;
+                background-size: contain;
+                width: 20px!important;
+                height: 20px!important;
+                background-image: url('./assets/images/svg/contacts/arrowLeft.svg');
+            }
+            .xdsoft_next {
+                background-position: 0;
+                opacity: 1 !important;
+                background-size: contain;
+                width: 20px!important;
+                height: 20px!important;
+                background-image: url('./assets/images/svg/contacts/arrowRight.svg');
+            }
+            .xdsoft_today_button {
+                display: none;
+            }
+            .xdsoft_label.xdsoft_month {
+                @extend %text;
+                font-size: 24/1920*100vw;
+                background-color: $backgroundMain;
+                padding: 0;
+                margin: 1vw;
+                width: auto;
+                // @charset "UTF-8";
+                @media(max-width: $width_adaptive) {
+                    font-size: 18/548*100vw;
+                }
+                .xdsoft_select {
+                    display: none;
+                }
+                >i {
+                    display: none;
+                }
+            }
+            .xdsoft_label.xdsoft_year {
+                @extend %text;
+                font-size: 24/1920*100vw;
+                padding: 0;
+                margin: 1vw;
+                background-color: $backgroundMain;
+                @media(max-width: $width_adaptive) {
+                    font-size: 18/548*100vw;
+                }
+                .xdsoft_select {
+                    display: none;
+                }
+                >i {
+                    display: none;
+                }
+            }
+        }
+        .xdsoft_calendar {
+            >table {
+                background-color: $themecolor2;
+                height: 17vw;
+                @media(max-width: $width_adaptive) {
+                    height: 35vw;
+                }
+                >thead {
+                    height: 3vw;
+                    color: $backgroundMain;
+                    padding: 20/1920*100vw 15/1920*100vw 15/1920*100vw;
+                    @extend %text;
+                    font-size: 24/1920*100vw;
+                    background-color: $themecolor2;
+                    @media(max-width: $width_adaptive) {
+                        height: 7vw;
+                    }
+                    th {
+                        background-color: $themecolor2;
+                        color: $backgroundMain;
+                        text-align: center;
+                        height: auto;
+                        @extend %text;
+                        font-size: 24/1920*100vw;
+                        @media(max-width: $width_adaptive) {
+                            font-size: 18/548*100vw;
+                        }
+                    }
+                }
+                >tbody {
+                    background-color: $themecolor2;
+                    td {
+                        background-color: $themecolor2;
+                        text-align: center;
+                        height: auto;
+                        @extend %text;
+                        font-size: 24/1920*100vw;
+                        @media(max-width: $width_adaptive) {
+                            font-size: 18/548*100vw;
+                        }
+                        div {
+                            color: $backgroundMain;
+                            padding: 0
+                        }
+                    }
+                    .xdsoft_current {
+                        background-color: $backgroundMain;
+                        div {
+                            color: $themecolor2;
+                            // padding: 0
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .xdsoft_timepicker {
+        margin: 0 !important;
+        height: 100%;
+        background-color: $backgroundMain;
+        @include makeitflex(row,
+        space-between);
+        // position: absolute;
+        display: flex !important;
+        width: 100% !important;
+        .xdsoft_prev,
+        .xdsoft_next,
+        .xdsoft_scrollbar {
+            display: none !important;
+        }
+        .xdsoft_time_box {
+            background-color: $backgroundMain;
+            // height: 100% !important;
+            height: 5vw !important;
+            width: 100% !important;
+            @media(max-width: $width_adaptive) {
+                height: 25vw !important;
+            }
+            .xdsoft_time_variant {
+                height: 100%;
+                @include makeitflex(row,
+                space-between);
+                margin: 0;
+                flex-wrap: wrap;
+                .xdsoft_time {
+                    @include makeitflex(column,
+                    center);
+                    @extend %text;
+                    width: 1/8*100%;
+                    // height: 1/3*100%;
+                    height: 100%;
+                    background-color: $backgroundMain;
+                    color: $themecolor2;
+                    font-size: 14/1920*100vw;
+                    &:nth-child(2n) {
+                        display: none;
+                    }
+                    @media(max-width: $width_adaptive) {
+                        font-size: 18/548*100vw;
+                    }
+                    &.xdsoft_current {
+                        background-color: $themecolor1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.calendar_description {
+    background-color: $themecolor1;
+    width: 100%;
+    padding: 18/1920*100vw 25/1920*100vw;
+    margin-top: auto;
+    @media(max-width: $width_adaptive) {
+        padding: 18/1920*100vw
+    }
+    &>div {
+        @extend %text;
+        display: flex;
+        height: 50%;
+        font-size: 18/1920*100vw;
+        color: $themecolor2;
+        text-transform: uppercase;
+        line-height: 24/18*100%;
+        @media(max-width: $width_adaptive) {
+            font-size: 14/548*100vw;
+        }
+        >svg {
+            fill: transparent;
+            width: 18/1920*100vw;
+            height: 18/1920*100vw;
+            margin-right: 0.5vw;
+            @media(max-width: $width_adaptive) {
+                width: 14/548*100vw;
+                height: 14/548*100vw;
+            }
+        }
+        >img {
+            margin-right: 0.5vw;
+            fill: transparent;
+            width: 18/1920*100vw;
+            height: 18/1920*100vw;
+            @media(max-width: $width_adaptive) {
+                width: 14/548*100vw;
+                height: 14/548*100vw;
+            }
+        }
+    }
+}

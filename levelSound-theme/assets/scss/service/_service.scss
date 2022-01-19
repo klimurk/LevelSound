@@ -1,0 +1,361 @@
+$service_firstColWidth:1391;
+$service_secondColWidth:223;
+$service_rowWidth:1614;
+.service {
+    @include makeitflex(row, flex-start);
+    @media(max-width: $width_adaptive) {
+        @include makeitflex(column, flex-start);
+    }
+    &__description {
+        width: (1920 - $service_rowWidth)/1920*100%;
+        @extend %text;
+        font-weight: 500;
+        font-size: 24/1920*100vw;
+        line-height: 1.5;
+        color: $themecolor2;
+        padding: 0 1%;
+        @media(max-width: $width_adaptive) {
+            padding: 0 3% 4%;
+            font-size: 14/375*100vw;
+            width: 100%;
+        }
+        >div {
+            font-family: 'Micra';
+            font-weight: 400;
+            // font-size: 45/1920*100vw;
+            font-size: 1.9vw;
+            line-height: 50/45;
+            margin: 50/1920*100vw auto;
+            text-transform: uppercase;
+            @media(max-width: $width_adaptive) {
+                font-size: 45/375*100vw;
+            }
+        }
+    }
+    &__list {
+        width: $service_rowWidth/1920 *100%;
+        @media(max-width: $width_adaptive) {
+            width: 100%;
+        }
+        &__item {
+            &__global {
+                @include makeitflex(row, flex-start);
+                height: 210/1920*100vw;
+                margin-bottom: 64/1920*100vw;
+                @media(max-width: $width_adaptive) {
+                    height: 69/375*100vw;
+                    margin-bottom: 89/375*100vw;
+                }
+                &_col {
+                    border: 2px solid $themecolor2;
+                    border-right: none;
+                    @include makeitflex(column, flex-start);
+                    &_name {
+                        @extend %text;
+                        min-width: 55.5%;
+                        // max-width: 873/($service_firstColWidth - 190)*100%;
+                        font-weight: 500;
+                        font-size: 96/1920*100vw;
+                        text-transform: uppercase;
+                        color: $themecolor2;
+                        line-height: 117/96 *100%;
+                        padding-top: 1%;
+                        max-height: 118/210*100%;
+                        @media(max-width: $width_adaptive) {
+                            // font-size: 24/375*100vw;
+                            font-size: 6vw;
+                        }
+                        >svg {
+                            vertical-align: text-top;
+                            width: 31/1920*100vw;
+                            height: 31/1920*100vw;
+                            fill: $themecolor2;
+                        }
+                    }
+                    &_num {
+                        // width: (197.49+28)/$service_firstColWidth*100%;
+                        width: 16.9%;
+                        // &Top,
+                        // &Btm {
+                        color: $themecolor2;
+                        font-family: 'Monument Extended';
+                        font-weight: 400;
+                        font-size: 24/1920*100vw;
+                        color: $themecolor2;
+                        padding-top: 1%;
+                        max-height: 118/210*100%;
+                        @media(max-width: $width_adaptive) {
+                            font-size: 9/375*100vw;
+                        }
+                        // }
+                    }
+                    &_decor {
+                        position: absolute;
+                        right: 14%;
+                        height: 55%;
+                        width: 185/$service_firstColWidth*100%;
+                        border-left: 2px solid $themecolor2;
+                        border-right: 2px solid $themecolor2;
+                        max-height: 118/210*100%;
+                        margin-left: 1%;
+                        @media(max-width: $width_adaptive) {
+                            right: 12%;
+                        }
+                        >div {
+                            z-index: inherit;
+                            position: relative;
+                            // height: 30%;
+                            height: 100%;
+                            >div {
+                                z-index: inherit;
+                                position: absolute;
+                                background-color: $themecolor2;
+                            }
+                        }
+                    }
+                    &_planet {
+                        position: absolute;
+                        right: (60 - 14)/$service_firstColWidth*100%;
+                        height: 55%;
+                        width: 132/$service_firstColWidth*100%;
+                        fill: $themecolor2;
+                        max-height: 118/210*100%;
+                        @media(max-width: $width_adaptive) {
+                            right: 1%;
+                        }
+                    }
+                    &_starline {
+                        width: 100%;
+                        height: (210 - 118)/210*100%;
+                    }
+                    &_open {
+                        @include makeitflex(column, center);
+                        margin-top: (210 - 147)/210*100%;
+                        height: 147/210*100%;
+                        border-top: $themecolor2 2px solid;
+                        &_btn {
+                            @include makeitflex(row, center);
+                            justify-content: center;
+                            position: relative;
+                            height: 17%;
+                            border: none;
+                            background-color: transparent;
+                            text-align: center;
+                            align-items: center;
+                            color: $themecolor2;
+                            cursor: pointer;
+                            text-transform: uppercase;
+                            transition: color $transition_time linear;
+                            &:hover {
+                                color: $themecolor1;
+                            }
+                            @media(max-width: $width_adaptive) {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                width: 100vw;
+                                height: 49/375*100vw;
+                                transform: translate(0.4%, 100%);
+                                border: 2px solid $themecolor2;
+                                border-top: none;
+                                font-size: 14/375*100vw;
+                            }
+                            &_text.open {
+                                display: block;
+                            }
+                            &_text.close {
+                                display: none;
+                            }
+                            >svg {
+                                transform-origin: center center;
+                                margin: 25% 0;
+                                height: 50%;
+                                width: 10%;
+                                fill: $themecolor2;
+                                @media(max-width: $width_adaptive) {
+                                    margin: 40% 0;
+                                    height: 20%;
+                                    width: 5%;
+                                }
+                            }
+                        }
+                    }
+                    &_mobileanim {
+                        display: none;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 90%;
+                        height: 70%;
+                        fill: $themecolor2;
+                        // height: 100%
+                        // #gIntroAnim_Elipse1 {
+                        //     display: none;
+                        // }
+                        @media(max-width: $width_adaptive) {
+                            display: block;
+                        }
+                    }
+                    &_round {
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        right: 25/1920*100vw;
+                        top: 25/1920*100vw;
+                        @media(max-width: $width_adaptive) {
+                            width: 2vw;
+                            height: 2vw;
+                            right: 5.83/375*100vw;
+                            top: 5.83/375*100vw;
+                            >path {
+                                stroke-width: 4;
+                            }
+                        }
+                    }
+                    &.col1 {
+                        @include makeitflex(row, flex-start);
+                        flex-wrap: wrap;
+                        width: $service_firstColWidth/$service_rowWidth*100%;
+                        padding: 0 (60 - 14)/$service_firstColWidth*100%;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            height: 2px;
+                            background-color: $themecolor2;
+                            width: 100%;
+                            position: absolute;
+                            bottom: (210 - 118)/210*100%;
+                            left: 0;
+                        }
+                        @media(max-width: $width_adaptive) {
+                            padding: 0 1% 0 (60 - 14)/$service_firstColWidth*100%;
+                        }
+                    }
+                    &.col2 {
+                        position: relative;
+                        width: $service_secondColWidth/$service_rowWidth*100%;
+                        border-right: 2px solid $themecolor2;
+                    }
+                }
+            }
+            &__service {
+                display: none;
+                padding: 0;
+                &__item {
+                    overflow: hidden;
+                    @include makeitflex(row, flex-start);
+                    width: 100%;
+                    height: 102/1920*100vw;
+                    margin-bottom: 64/1920*100vw;
+                    @media(max-width: $width_adaptive) {
+                        @include makeitflex(column, flex-start);
+                        height: 98/375*100vw;
+                        margin-bottom: 37/375*100vw;
+                    }
+                    &__description {
+                        @include makeitflex(row, flex-start);
+                        border: 2px solid $themecolor2;
+                        border-right: none;
+                        width: 1453/$service_rowWidth*100%;
+                        position: relative;
+                        align-items: center;
+                        @media(max-width: $width_adaptive) {
+                            height: 60/98*100vw;
+                            width: 100vw;
+                            border: 2px solid $themecolor2;
+                            border-bottom: none;
+                        }
+                        >img {
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                            width: 100%;
+                            // height: 100%;
+                            object-fit: fill;
+                            z-index: -1;
+                            @media(max-width: $width_adaptive) {
+                                height: 100%;
+                                width: auto;
+                            }
+                        }
+                        &_name {
+                            @extend %text;
+                            margin-left: 99/1453*100%;
+                            font-weight: 500;
+                            font-size: 36/1920*100vw;
+                            line-height: 0.75;
+                            color: $themecolor2;
+                            @media(max-width: $width_adaptive) {
+                                font-size: 14/375*100vw;
+                                max-width: 50%;
+                                line-height: 1.1;
+                            }
+                        }
+                        &_price {
+                            @extend %text;
+                            // margin-left: 764/1453*100%;
+                            position: absolute;
+                            right: 152/1453*100%;
+                            text-align: center;
+                            font-weight: 700;
+                            font-size: 24/1920*100vw;
+                            line-height: 1.25;
+                            color: $themecolor2;
+                            @media(max-width: $width_adaptive) {
+                                font-size: 14/375*100vw;
+                                right: 13.6%;
+                            }
+                        }
+                        &_svg {
+                            position: absolute;
+                            right: 27/1453*100%;
+                            top: 16/100*100%; // margin-left: 94/1453*100%;
+                            fill: $themecolor2;
+                            width: 30/1920*100vw;
+                            height: 30/1920*100vw;
+                            @media(max-width: $width_adaptive) {
+                                right: 15/373*100%;
+                                top: 15/64*100%;
+                                width: 20/375*100vw;
+                                height: 20/375*100vw;
+                            }
+                        }
+                    }
+                    &__order {
+                        border: 2px solid $themecolor2;
+                        border-right: none;
+                        width: ($service_rowWidth - 1453)/$service_rowWidth*100%;
+                        position: relative;
+                        @media(max-width: $width_adaptive) {
+                            height: 38/98*100vw;
+                            width: 100vw;
+                            border: 2px solid $themecolor2;
+                        }
+                        &_btn {
+                            @extend %text;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background-color: transparent;
+                            border: none;
+                            color: $themecolor2;
+                            cursor: pointer;
+                            text-transform: uppercase;
+                            transition: color $transition_time linear;
+                            &:hover {
+                                color: $themecolor1;
+                            }
+                            @media(max-width: $width_adaptive) {
+                                // font-weight: bold;
+                                font-size: (26 - 12)/375*100vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

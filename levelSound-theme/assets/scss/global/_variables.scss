@@ -1,0 +1,37 @@
+//     *screen width
+//======================================
+$width_phoneVer:320px;
+$width_phoneHor:480px;
+$width_iPadVer: 600px;
+$width_iPadHor: 800px;
+$width_tablet: 1024px;
+$width_phone: 1280px;
+$width_fullhd: 1920px;
+$width_adaptive: $width_tablet;
+//     *colors
+//======================================
+$backgroundMain:#000;
+$themecolor1: #EA0F0F;
+$themecolor2: #fff;
+//     *margins paddings
+//======================================
+// $margin_horizontal_desktop: 50px;
+$margin_horizontal_device: 50px;
+// @media (max-width: $width_adaptive){
+$margin_horizontal_phone: 10px;
+// }
+// $margin_horizontal_mobile: 10px;
+$margin_vertical_blocks: 10rem;
+//    *fonts
+//======================================
+$h2Font: 6.5vw;
+$h3Font: 3.3vw;
+$btnFont: 1.5em;
+//      *vh
+//===========================
+$vh:calc(var(--resizeVh, 1vh));
+$fullvh:calc(var(--fullvh, 1vh) * 100);
+//      *animation
+//====================================
+$transition_time:.2s;
+$transition_anim_type: ease-in;

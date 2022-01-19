@@ -1,0 +1,26 @@
+.preloader {
+    display: none;
+    /* animation: anim_preload 0.5s infinite 0.1s ease-in; */
+}
+
+@media (max-width: 1024px) {
+    .preloader {}
+    .preloader>svg {}
+}
+
+@-webkit-keyframes anim_preload {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1) translate(-50%, -50%);
+        transform: scale(1) translate(-50%, -50%);
+    }
+    50% {
+        -webkit-transform: scale(1.01) translate(-50%, -50%);
+        transform: scale(1.01) translate(-50%, -50%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1) translate(-50%, -50%);
+        transform: scale(1) translate(-50%, -50%);
+    }
+}

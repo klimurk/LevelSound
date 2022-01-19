@@ -1,0 +1,1272 @@
+//     *Intro
+//=============================
+.intro {
+    margin-top: 35vh;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: $margin_vertical_blocks;
+    height: calc(var(--fullvh, 1vh) * 50);
+    @media(max-width: $width_adaptive) {
+        margin-top: 0;
+        height: calc(var(--fullvh, 1vh) * 80);
+        margin-bottom: 5vw;
+    }
+    &__inner {
+        position: absolute;
+        top: 0;
+        // left:0;
+        @include makeitflex(column, center);
+        height: calc(var(--fullvh, 1vh)*50);
+        @media(max-width: $width_adaptive) {
+            @include makeitflex(column, flex-start);
+            height: 100%;
+            padding: calc(var(--resizeVh, 1vh)*4) 0;
+        }
+    }
+    &__video {
+        position: relative;
+        // top: 0;
+        // left: 50%;
+        z-index: 1;
+        display: none;
+        // transform: translatex(-50%);
+        @media(max-width: $width_adaptive) {
+            width: 100% !important;
+            min-height: 100%;
+            display: block;
+        }
+        >video {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            height: 100%;
+        }
+    }
+    &__text {
+        @extend %h1title;
+        position: relative;
+        z-index: 2;
+        // font-size: 10vh;
+        word-wrap: break-word;
+        vertical-align: text-top;
+        margin: auto 0;
+        @media(max-width: $width_adaptive) {
+            letter-spacing: -0.2vw;
+            // padding: 2rem 0;
+            color: $themecolor2;
+            font-size: 9vh;
+            font-weight: normal;
+            letter-spacing: -0.2vw;
+            line-height: 2;
+            -webkit-text-stroke: none;
+        }
+        @media(max-width:$width_phone) {
+            font-size: 8.7vh;
+        }
+        @media(max-width:$width_tablet) {
+            font-size: 6.7vh;
+        }
+        @media(max-width:$width_iPadHor) {
+            font-size: 6.7vh;
+        }
+        @media(max-width:$width_iPadVer) {
+            font-size: 5.7vh;
+        }
+        @media(max-width:$width_phoneHor) {
+            font-size: 4.4vh;
+        }
+        @media(max-width:$width_phoneVer) {
+            font-size: 4.4vh;
+        }
+    }
+    &__star {
+        position: absolute;
+        right: 0;
+        top: 2%;
+        height: 3vw;
+        width: 3vw;
+        fill: "#EA0F0F";
+        @media(max-width: $width_adaptive) {
+            display: none;
+        }
+    }
+    &__lines {
+        position: absolute;
+        right: 0;
+        bottom: 2%;
+        width: 15vw;
+        height: 10vw;
+        &__inner {
+            position: relative;
+        }
+        &__text {
+            position: absolute;
+            color: $themecolor1;
+            font-family: 'Monument Extended', sans-serif;
+            line-height: 1;
+        }
+        @media(max-width:$width_adaptive) {
+            display: none;
+        }
+    }
+    &__anim {
+        position: relative;
+        fill: $themecolor1;
+        height: 100%;
+        width: 100%;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 1rem;
+        z-index: 2;
+        transform: translateX(-50%);
+        display: none;
+        width: 135px;
+        border-bottom: 5px solid $themecolor2;
+        margin-top: 70px;
+        @media(max-width: $width_adaptive) {
+            display: block;
+        }
+    }
+}
+
+//      *benefits
+// =================================================
+.benefits {
+    @include makeitflex(row, space-between);
+    z-index: 10;
+    display: block;
+    width: 100%;
+    margin-bottom: $margin_vertical_blocks;
+    &__inner {
+        @include makeitflex(row, space-between);
+        position: relative;
+        @media(max-width: $width_adaptive) {
+            @include makeitflex(column, flex-start);
+        }
+    }
+    &__title {
+        @extend %h2title;
+        position: absolute;
+        // margin-left: - 70px;
+        >div {
+            margin-left: 70px;
+        }
+        @media(max-width: $width_adaptive) {
+            position: relative;
+            margin-bottom: 3rem;
+            // top: 0;
+            // left: 50%;
+            // transform: translateX(-50%);
+            >div {
+                margin-left: 40px;
+            }
+        }
+    }
+    &__col {
+        position: relative;
+        max-width: 50%;
+        @media(max-width: $width_adaptive) {
+            max-width: 100%;
+            margin-bottom: 3vw;
+        }
+    }
+    &__description {
+        padding: 9vw 0 0 70px;
+        @media(max-width: $width_adaptive) {
+            padding: 0;
+        }
+        &__text {
+            @extend %text;
+            margin: 5vw 0 4vw;
+            font-size: 1.1vw;
+            line-height: 1.5;
+            // font-weight: bold;
+            color: $themecolor2;
+            @media(max-width: $width_adaptive) {
+                // margin-top: 6rem;
+                font-size: 3.7vw;
+            }
+        }
+        &__btn {
+            margin-top: 4vw;
+            text-decoration: none;
+            @media(max-width: $width_adaptive) {
+                margin-top: 3vw;
+                font-size: 5vw;
+                padding: 3vw 11vw;
+                // width: auto;
+            }
+        }
+        &__photo {
+            margin-top: 7rem;
+            width: 22vw;
+            // height: 36rem;
+            overflow-y: scroll;
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            // todo: сделать чтобы прокручивалась сама по прокрутке
+            overflow: hidden;
+            @media(max-width:$width_adaptive) {
+                display: none;
+                // width: 90vw;
+                // height: 46vw;
+                // margin-left: 9vw;
+                // >img {
+                //     width: 100%;
+                // }
+            }
+        }
+    }
+    &__owl {
+        position: relative;
+        width: 70%;
+        margin-left: 30%;
+        @media(max-width: $width_adaptive) {
+            position: static;
+        }
+        #benefits_sync1 {
+            overflow-x: hidden;
+            .benefits__owl__carousel__item {
+                // @include makeitflex(row, flex-end);
+                position: relative;
+                &__photo {
+                    position: relative;
+                    width: 40vw;
+                    height: 45vw;
+                    overflow-y: hidden;
+                    @media(max-width: $width_adaptive) {
+                        width: 70vw;
+                        height: 90vw;
+                    }
+                    >img {
+                        object-fit: cover;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        width: 100%;
+                        min-height: 100%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+            .owl-stage {
+                @include makeitflex(row, flex-start);
+            }
+            .owl-dots,
+            .owl-nav {
+                display: none;
+            }
+        }
+        #benefits_sync2 {
+            $benefits_sync2_textwidth: 15.6vw;
+            // @include makeitflex(row, flex-end);
+            position: absolute;
+            bottom: 0;
+            width: $benefits_sync2_textwidth;
+            left: -$benefits_sync2_textwidth;
+            // overflow-x: hidden;
+            background-color: $themecolor2;
+            @media(max-width: $width_adaptive) {
+                width: 60%;
+                // width: auto;
+                left: 5%;
+            }
+            .benefits__owl__carousel__text__item {
+                @extend %text;
+                @include makeitflex(column, center);
+                position: relative;
+                width: $benefits_sync2_textwidth;
+                height: $benefits_sync2_textwidth;
+                padding: 0 1rem;
+                font-size: 0.8vw;
+                @media(max-width: $width_adaptive) {
+                    width: 100%;
+                    // left: -20vw;
+                    height: 30vw;
+                    padding: 0 1rem;
+                    font-size: 2vw;
+                }
+            }
+            .owl-stage-outer {
+                width: $benefits_sync2_textwidth;
+                height: $benefits_sync2_textwidth;
+                @media(max-width: $width_adaptive) {
+                    width: auto;
+                    height: auto;
+                }
+                .owl-stage {
+                    @include makeitflex(row, flex-start);
+                    height: 100%;
+                }
+            }
+            .owl-dots {
+                display: none;
+            }
+        }
+        &__nav {
+            z-index: 5;
+            position: absolute;
+            bottom: 0;
+            left: -3rem;
+            @media(max-width: $width_adaptive) {
+                left: calc(65% - 3rem);
+            }
+            >button {
+                width: 3rem;
+                height: 3rem;
+                text-align: center;
+                border-radius: 0;
+                border: none;
+                background-color: $themecolor1;
+                padding: 10%;
+                >svg {
+                    fill: $backgroundMain;
+                    height: 100%;
+                    max-width: 75%;
+                    transition: fill $transition_time linear;
+                }
+                &:hover {
+                    >svg {
+                        fill: $themecolor2;
+                    }
+                }
+            }
+        }
+        &__svg {
+            // display: inline-block;
+            position: absolute;
+            width: 21rem;
+            height: 21rem;
+            top: -10rem;
+            left: -10rem;
+            animation-name: anim__textRound;
+            animation-duration: 30s;
+            // animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-timing-function: linear;
+            z-index: -1;
+            @media(max-width: $width_adaptive) {
+                display: none;
+            }
+        }
+    }
+}
+
+.people {
+    z-index: 10;
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 50/1920*100vw;
+    &__slick {
+        // height: 665/1920*100vw;
+        #people_bigimage {
+            width: 660/1920*100vw;
+            position: relative;
+            max-height: 100%;
+            @media(max-width: $width_adaptive) {
+                width: 100%;
+            }
+            .slick-list {
+                height: 100%;
+                .slick-track {
+                    height: 100%;
+                    // display: flex;
+                    .slick-slide {
+                        .people_bigimages__photo {
+                            height: 660/1920*100vw;
+                            @media(max-width: $width_adaptive) {
+                                width: 100%;
+                                height: auto;
+                            }
+                            >img {
+                                height: 100%;
+                                @media(max-width: $width_adaptive) {
+                                    width: 100%;
+                                    height: auto;
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #people_images {
+            // height: 100%;
+            position: absolute;
+            width: 45%;
+            right: 8%;
+            bottom: 0;
+            @media(max-width: $width_adaptive) {
+                position: relative;
+                width: 100%;
+                right: auto;
+                bottom: auto;
+                margin-top: 3vw;
+            }
+            .people_images {
+                &_name {}
+                &__photo {
+                    display: flex;
+                    // margin: 0 auto;
+                    height: 300/1920*100vw;
+                    width: 300/1920*100vw;
+                    margin: auto;
+                    @media(max-width: $width_adaptive) {
+                        height: 107/375*100vw;
+                        width: 107/375*100vw;
+                    }
+                }
+            }
+            .slick-list {
+                height: 100%;
+                .slick-track {
+                    height: 100%;
+                    // display: flex;
+                    .slick-slide {
+                        // height: 100%;
+                        display: flex;
+                        // margin-top: auto;
+                        // &.slick-active {
+                        //     .people_images__photo {
+                        //         margin-left: auto;
+                        //     }
+                        // }
+                        // &.slick-active.forMargin {
+                        //     .people_images__photo {
+                        //         margin: auto auto 0;
+                        //     }
+                        // }
+                        &.slick-current.slick-active {
+                            .people_images_name {
+                                display: none;
+                            }
+                            .people_images__photo {
+                                // transform-origin: left bottom;
+                                transition: width $transition_time ease-out, height $transition_time ease-out;
+                                // >img {
+                                //     max-width: none;
+                                // }
+                                // height: 660/1920*100vw;
+                            }
+                        }
+                        // &.is-active {
+                        //     transform: translateX(100%);
+                        //     transition: transform $transition_time linear;
+                        // }
+                    }
+                }
+            }
+        }
+        #people_info {
+            position: absolute;
+            right: 10%;
+            top: 0;
+            width: 40%;
+            color: $themecolor2;
+            height: 18vw;
+            @media(max-width: $width_adaptive) {
+                position: relative;
+                width: 100%;
+                right: auto;
+                bottom: auto;
+                margin-top: 2vw;
+                height: auto;
+            }
+            .people_info {
+                &_title {
+                    // @extend %text;
+                    font-weight: normal;
+                    font-size: 24/1920*100vw;
+                    line-height: 29/24*100%;
+                    margin-bottom: 1vw;
+                    @media(max-width: $width_adaptive) {
+                        font-size: 2.8vw;
+                    }
+                }
+                &_text {
+                    @extend %text;
+                    font-weight: normal;
+                    font-size: 18/1920*100vw;
+                    line-height: 29/18*100%;
+                    @media(max-width: $width_adaptive) {
+                        font-size: 3vw;
+                    }
+                }
+                &_social {
+                    @extend %text;
+                    font-weight: normal;
+                    font-size: 18/1920*100vw;
+                    line-height: 29/18*100%;
+                    margin-top: auto;
+                    @media(max-width: $width_adaptive) {
+                        font-size: 2vw;
+                        margin-top: 2vw;
+                    }
+                    >a {
+                        text-decoration: underline;
+                        color: $themecolor2;
+                    }
+                }
+            }
+            .slick-list {
+                height: 100%;
+                .slick-track {
+                    height: 100%;
+                    .slick-slide {
+                        @include makeitflex(column, flex-start);
+                        opacity: 0;
+                        height: 100%;
+                        &.slick-current {
+                            opacity: 1;
+                            // margin: 0 1vw 0 0;
+                        }
+                    }
+                }
+            }
+        }
+        .btn_people {
+            position: absolute;
+            width: 65/1920*100vw;
+            height: 65/1920*100vw;
+            bottom: 15%;
+            background-color: $themecolor1;
+            border: none;
+            &:hover {
+                >svg {
+                    fill: $themecolor2;
+                }
+            }
+            @media(max-width: $width_adaptive) {
+                width: 5vw;
+                height: 5vw;
+                bottom: 8%;
+            }
+            >svg {
+                width: 27/65*100%;
+                height: 100%;
+                fill: $backgroundMain;
+                transition: fill $transition_time linear;
+            }
+            &.left {
+                right: 55%;
+                @media(max-width: $width_adaptive) {
+                    right: 98%;
+                    transform: translateX(100%);
+                }
+                >svg {
+                    transform: rotate(180deg);
+                }
+            }
+            &.right {
+                right: 2%;
+            }
+        }
+    }
+}
+
+//  SASS INHERITANCE  @extend @mixin, e.g. clearfix
+//=============================
+//GENERATED CONTENT   content
+//=============================
+// POSITION AND LAYOUT   position z-index top bottom left right Flexbox properties float clear
+//=============================
+// DISPLAY AND VISIBILITY display opacity transform
+//=============================
+// CLIPPING overflow clip
+//=============================
+// ANIMATION animation transition
+//=============================
+// BOX MODEL (FROM OUTSIDE IN)  margin box-shadow border border-radius box-sizing width height padding
+//=============================
+// BACKGROUND background cursor
+//=============================
+// TYPOGRAPHY font-size line-height font-family font-weight font-style text-align text-transform word-spacing color
+//=============================
+// PSEUDO-CLASSES & PSEUDO-ELEMENTS (NESTED RULES) :hover :focus :active :before :after :first-child :last-child
+// ======================================================
+.clients {
+    @include makeitflex(column, flex-start);
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    // height: calc(var(--fullvh, 1vh)*100);
+    background-color: $themecolor2;
+    @media(max-width: $width_adaptive) {
+        flex-direction: column;
+        min-height: 1px;
+        // height: auto;
+        // height: 245vw;
+    }
+    &__inner {
+        // height: 100%;
+        // height: calc(var(--fullvh,1vh)*100 - (9.9vw * 1.4));
+        @include makeitflex(row, space-between);
+        @media(max-width: $width_adaptive) {
+            @include makeitflex(column, flex-start);
+            height: auto;
+        }
+    }
+    &__col {
+        height: 100%;
+        // width: 50%;
+        &:first-child {
+            max-width: 50%;
+        }
+        &:last-child {
+            max-width: 40%;
+        }
+        @media(max-width: $width_adaptive) {
+            max-width: 100%!important;
+            width: 100% !important;
+            height: auto;
+        }
+    }
+    .title_fullwidth {
+        z-index: 10;
+    }
+    .animdisk {
+        position: relative;
+        z-index: 0;
+        // height: 100%;
+        margin-left: -$margin_horizontal_device;
+        @media(max-width: $width_adaptive) {
+            // margin-left: 0;
+            margin-bottom: 75%;
+            height: 100vw;
+            margin-left: 0;
+            // overflow-x: hidden;
+            // transform: rotate(90deg);
+            // margin-left: 0;
+        }
+        >img {
+            height: 100%;
+            max-height: 100%;
+            @media(max-width: $width_adaptive) {
+                // margin-top: -1.4%;
+                // height: auto;
+                // width: 100vw;
+                max-width: none;
+                margin-left: -$margin_horizontal_phone;
+            }
+        }
+        #package {
+            position: relative;
+            z-index: 2;
+            left: -100%;
+            top: 0;
+            // transform: translateX(-100%);
+            transition: all 0.1s linear !important;
+            @media(max-width: $width_adaptive) {
+                left: 0%;
+                top: -100%;
+                width: 100vw;
+                // transform: translateY(-150%) rotate(90deg);
+            }
+        }
+        #vinyl {
+            z-index: 1;
+            position: absolute;
+            left: -50%;
+            bottom: 0;
+            top: 0;
+            transform-origin: center center;
+            transition: all 0.1s linear !important;
+            // transform: translateX(-100%);
+            @media(max-width: $width_adaptive) {
+                top: -50%;
+                left: 0;
+            }
+        }
+    }
+    &__text {
+        position: relative;
+        // max-width: 50%;
+        // margin-left: 50%;
+        margin: 2rem 0;
+        text-align: right;
+        height: 100%;
+        z-index: 3;
+    }
+    &__subtitle {
+        @extend %h2title;
+        line-height: 1.2;
+        @media(max-width: $width_adaptive) {
+            font-size: 9.5vw;
+        }
+    }
+    &__subtext {
+        @extend %text;
+        width: 50%;
+        margin: 2rem 0;
+        margin-left: 50%;
+        color: $backgroundMain;
+        // todo нормально влепить вправо, немаржином
+        @media(max-width: $width_adaptive) {
+            width: auto;
+            margin-left: 0;
+            line-height: 20/14*100%;
+            font-size: 2.5vw;
+        }
+    }
+    &__btn {
+        display: inline-block;
+        text-decoration: none;
+        text-align: right;
+        @media(max-width: $width_adaptive) {
+            text-align: center;
+        }
+    }
+}
+
+.contactform {
+    overflow-x: hidden;
+    &__inner {
+        @include makeitflex(row, space-between);
+        @media(max-width: $width_adaptive) {
+            flex-direction: column-reverse;
+        }
+    }
+    &__col {
+        padding: 5rem 0;
+        width: 50%;
+        @media(max-width: $width_adaptive) {
+            width: 100%;
+            padding: 2rem 0;
+        }
+        .casseteback {
+            display: inline-block;
+            z-index: 1;
+            position: relative;
+            // border: 5px solid $themecolor1;
+            overflow: hidden;
+            // todo delete
+            height: 27vw;
+            width: 90%;
+            @media(max-width: $width_adaptive) {
+                height: 64vw;
+                width: 100%;
+            }
+            >img {
+                // display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                z-index: 4;
+                // margin: 0 auto;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+            >svg {
+                z-index: 5;
+                position: absolute;
+                top: -20%;
+                right: -10%;
+                width: 40%;
+                height: 61.5724%;
+                animation: anim__textRound 30s infinite running linear;
+            }
+            &_1 {
+                @include makeitflex(row, space-between);
+                height: 65%;
+                padding: 2% 6%;
+                z-index: 5;
+                color: $themecolor2;
+                >div {
+                    @include makeitflex(column, flex-start);
+                    z-index: inherit;
+                    .casseteBack_table {
+                        @include makeitflex(row, flex-start);
+                        z-index: inherit;
+                        height: 65%;
+                        border: 3px solid $themecolor2;
+                        .casseteBack_table_col {
+                            z-index: inherit;
+                            &.first {
+                                z-index: inherit;
+                                width: 27%;
+                                position: relative;
+                                border-right: 3px solid $themecolor2;
+                                >div {
+                                    z-index: inherit;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 10%;
+                                    transform: rotate(90deg);
+                                    font-family: 'Monument Extended', sans-serif;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 0.4vw;
+                                    color: $themecolor2;
+                                    cursor: default;
+                                    @media(max-width: $width_adaptive) {
+                                        font-size: 1vw;
+                                    }
+                                }
+                                >svg {
+                                    z-index: inherit;
+                                    width: 150%;
+                                    transform: rotate(90deg) translate(30%, 15%);
+                                    fill: $themecolor2;
+                                }
+                            }
+                            &.second {
+                                z-index: inherit;
+                                @include makeitflex(row, flex-start);
+                                flex-wrap: wrap;
+                                width: 43%;
+                                >div {
+                                    z-index: inherit;
+                                    border-right: 3px solid $themecolor2;
+                                }
+                                .casseteBack_table_col_second {
+                                    z-index: inherit;
+                                    &.first {
+                                        z-index: inherit;
+                                        @include makeitflex(column, center);
+                                        width: 65%;
+                                        height: 68%;
+                                        >img {
+                                            width: 60%;
+                                            margin: auto;
+                                        }
+                                    }
+                                    &.second {
+                                        z-index: inherit;
+                                        width: 35%;
+                                        height: 68%;
+                                        position: relative;
+                                        >div {
+                                            z-index: inherit;
+                                            position: absolute;
+                                            right: 0;
+                                            top: 25%;
+                                            transform: rotate(90deg);
+                                            font-family: 'Monument Extended', sans-serif;
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 0.8vw;
+                                            color: $themecolor2;
+                                            cursor: default;
+                                            @media(max-width: $width_adaptive) {
+                                                font-size: 1.7vw;
+                                            }
+                                        }
+                                        >svg {
+                                            z-index: inherit;
+                                            position: absolute;
+                                            right: 18%;
+                                            bottom: 7%;
+                                            width: 36%;
+                                            height: 18%;
+                                        }
+                                    }
+                                    &.third {
+                                        z-index: inherit;
+                                        @include makeitflex(row, center);
+                                        width: 100%;
+                                        height: 32%;
+                                        border-top: 3px solid $themecolor2;
+                                        position: relative;
+                                        >svg {
+                                            z-index: inherit;
+                                            height: 100%;
+                                            width: 14%;
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0;
+                                            transition: transform .5s linear;
+                                            // margin:0 2%;
+                                            fill: $themecolor2;
+                                            >path {
+                                                z-index: inherit;
+                                                transform: rotate(180deg);
+                                                transform-origin: center;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.third {
+                                z-index: inherit;
+                                position: relative;
+                                width: 30%;
+                                >div {
+                                    z-index: inherit;
+                                    position: absolute;
+                                    background-color: $themecolor2;
+                                }
+                            }
+                        }
+                    }
+                    .casseteBack_compact {
+                        z-index: inherit;
+                        @include makeitflex(column, center);
+                        height: 35%;
+                        width: 50%;
+                    }
+                }
+            }
+            &_2 {
+                @include makeitflex(column, center);
+                z-index: 6;
+                height: 10%;
+                position: relative;
+                // background-color: $themecolor2;
+                font-family: 'AlteHaasGrotesk';
+                font-size: 1vw;
+                font-weight: bold;
+                font-style: normal;
+                // line-height: 2.5;
+                letter-spacing: 0.45vw;
+                text-align: center;
+                color: $backgroundMain;
+                text-transform: uppercase;
+                cursor: default;
+                @media(max-width: $width_adaptive) {
+                    font-size: 2.5vw;
+                    letter-spacing: 0.9vw;
+                }
+            }
+            &_3 {
+                @include makeitflex(row, flex-end);
+                z-index: 5;
+                height: 25%;
+                padding: 3% 7% 2%;
+                &_col {
+                    z-index: inherit;
+                    &.second {
+                        z-index: inherit;
+                        @include makeitflex(column, space-between);
+                        width: 63%;
+                        text-align: center;
+                        >a {
+                            @extend %text;
+                            z-index: inherit;
+                            color: $themecolor2;
+                            text-transform: uppercase;
+                            font-size: 0.6vw;
+                            letter-spacing: 1px;
+                            transition: color $transition_time linear;
+                            &:hover {
+                                z-index: inherit;
+                                color: $themecolor1;
+                            }
+                            @media(max-width:$width_adaptive) {
+                                font-size: 1.5vw;
+                            }
+                        }
+                    }
+                    &.third {
+                        z-index: inherit;
+                        @include makeitflex(row, space-between);
+                        flex-wrap: wrap;
+                        width: 20%;
+                        >a {
+                            // @include social__link*
+                            z-index: inherit;
+                            @include social__link($themecolor2, transparent, $backgroundMain, $themecolor1);
+                            width: 40%;
+                            height: 60%;
+                            text-align: center;
+                            >svg {
+                                height: 80%;
+                                max-width: 100%;
+                                margin: 10%;
+                            }
+                        }
+                        >div {
+                            z-index: inherit;
+                            @include makeitflex(column, flex-end);
+                            width: 100%;
+                            text-align: center;
+                            color: $themecolor2;
+                            text-transform: uppercase;
+                            font-family: 'AlteHaasGrotesk';
+                            font-weight: bold;
+                            font-style: normal;
+                            font-size: 1vw;
+                            cursor: default;
+                            @media(max-width: $width_adaptive) {
+                                font-size: 2.3vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .casseteside {
+            display: none;
+            margin-top: 5rem;
+            // display: block;
+            width: 90%;
+            position: relative;
+            @media(max-width: $width_adaptive) {
+                width: 100%;
+            }
+            >img {
+                // margin: 0 auto;
+                width: 100%;
+                z-index: 1;
+            }
+            &__links {
+                @include makeitflex(row, space-between);
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-60%);
+                height: 100%;
+                width: 60%;
+                >a {
+                    z-index: 2;
+                    @include social__link($backgroundMain, $themecolor1, $themecolor2, $themecolor1);
+                    width: 3vw;
+                    height: 3vw;
+                    margin: auto 5%;
+                    text-align: center;
+                    padding: 1.5% 0;
+                    @media(max-width: $width_adaptive) {
+                        width: 7vw;
+                        height: 7vw;
+                    }
+                    >svg {
+                        margin: auto;
+                        max-height: 90%;
+                        max-width: 90%;
+                    }
+                }
+            }
+            #casseteSide_topNum {
+                z-index: 5;
+                position: absolute;
+                top: 22%;
+                left: 5%;
+                opacity: 0.8;
+                font-family: 'Monument Extended', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 0.45vw;
+                color: $themecolor2;
+                cursor: default;
+                @media(max-width: $width_adaptive) {
+                    font-size: 1.1vw;
+                }
+            }
+            &_text {
+                color: $themecolor2;
+                text-transform: uppercase;
+                position: absolute;
+                bottom: 39%;
+                right: 14.5%;
+                font-size: 0.5vw;
+                cursor: default;
+                @media(max-width: $width_adaptive) {
+                    font-size: 1.2vw;
+                }
+            }
+        }
+        .casseteContact {
+            display: inline-block;
+            position: relative;
+            @media(max-width: $width_adaptive) {
+                width: 175%;
+                margin-bottom: 10vw;
+            }
+            &_form {
+                @include makeitflex(column, flex-start);
+                // display: flex;
+                position: absolute;
+                width: 75%;
+                top: 16.5%;
+                left: 13%;
+                @media(max-width: $width_adaptive) {
+                    width: 45%;
+                    top: 17.2%;
+                    left: 9%;
+                }
+                .MainContactform {
+                    &_input {
+                        height: 1.2vw;
+                        @media(max-width: $width_adaptive) {
+                            margin-bottom: 0;
+                            height: 4.5vw;
+                        }
+                        >span {
+                            @include makeitflex(row, flex-start);
+                            height: 100%;
+                            >input {
+                                @extend %text;
+                                position: relative;
+                                font-size: 0.8vw;
+                                line-height: 1.45;
+                                text-transform: uppercase;
+                                color: #4E4C5A;
+                                width: 100%;
+                                text-indent: 2px;
+                                background-color: transparent;
+                                border: none;
+                                @media(max-width: $width_adaptive) {
+                                    font-size: 2.8vw;
+                                    line-height: 1.5;
+                                }
+                            }
+                        }
+                        .wpcf7-not-valid-tip {
+                            @extend %text;
+                            // width: 100%;
+                            font-size: 0.8vw;
+                            line-height: 1.45;
+                            position: absolute;
+                            right: 5%;
+                            @media(max-width: $width_adaptive) {
+                                font-size: 2.8vw;
+                                line-height: 1.5;
+                                right: -10%;
+                            }
+                        }
+                    }
+                    &_select {
+                        height: 1.2vw;
+                        @media(max-width: $width_adaptive) {
+                            margin-bottom: 0;
+                            height: 4.5vw;
+                        }
+                        >span {
+                            @include makeitflex(row, flex-start);
+                            height: 100%;
+                            >select {
+                                height: 1.2vw;
+                                text-indent: 0;
+                                @extend %text;
+                                position: relative;
+                                font-size: 0.8vw;
+                                line-height: 1.45;
+                                text-transform: uppercase;
+                                color: #4E4C5A;
+                                width: 100%;
+                                text-indent: 2px;
+                                background-color: transparent;
+                                border: none;
+                                // position: absolute;
+                                @media(max-width: $width_adaptive) {
+                                    font-size: 2.8vw;
+                                    line-height: 1.5;
+                                    height: 4.5vw;
+                                }
+                                >option {
+                                    max-width: 100%;
+                                }
+                            }
+                        }
+                        .wpcf7-not-valid-tip {
+                            @extend %text;
+                            // width: 100%;
+                            font-size: 0.8vw;
+                            line-height: 1.45;
+                            position: absolute;
+                            right: 5%;
+                            @media(max-width: $width_adaptive) {
+                                font-size: 2.8vw;
+                                line-height: 1.5;
+                                right: -10%;
+                            }
+                        }
+                    }
+                    &_btn {
+                        // margin: 0 auto;
+                        width: 100%;
+                        margin: 12vw auto 0;
+                        padding: 0;
+                        transition: box-shadow .2s linear;
+                        background: $themecolor1;
+                        // padding: 0.5rem 1.5rem;
+                        border: none;
+                        font-family: 'Helvetica Neue', sans-serif;
+                        text-transform: uppercase;
+                        font-style: normal;
+                        font-weight: bold;
+                        text-align: center;
+                        font-size: $btnFont;
+                        line-height: 1.1;
+                        &:hover {
+                            cursor: pointer;
+                            box-shadow: 0px 79px 175px rgba(234, 15, 15, 0.16), 0px 39.5386px 104.074px rgba(234, 15, 15, 0.121653), 0px 23.8162px 67.996px rgba(234, 15, 15, 0.104254), 0px 15.2627px 42.419px rgba(234, 15, 15, 0.0913432), 0px 9.89203px 23.2766px rgba(234, 15, 15, 0.08), 0px 6.22692px 9.19345px rgba(234, 15, 15, 0.0686568), 0px 3.57775px 0px rgba(234, 15, 15, 0.0557458), 0px 1.57466px 0px rgba(234, 15, 15, 0.0383468);
+                        }
+                        @media(max-width: $width_adaptive) {
+                            width: 90vw;
+                            transform: translateX(-12.5%);
+                            margin-top: 82vw;
+                            // width: 80%;
+                            // margin: 0 10%;
+                        }
+                        >input {
+                            background-color: transparent;
+                            border: none;
+                            color: $themecolor2;
+                            width: 100%;
+                            height: 100%;
+                            margin: 1rem 0;
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                        >span {
+                            display: none;
+                        }
+                    }
+                }
+                .wpcf7-response-output {
+                    display: none;
+                }
+            }
+            &_background {
+                margin: 0 auto;
+                width: 90%;
+                @media(max-width: $width_adaptive) {
+                    margin: 0;
+                    width: 100%;
+                }
+            }
+            &_animring {
+                width: 9.5%;
+                position: absolute;
+                animation: anim__textRound 30s infinite running linear;
+                @media(max-width: $width_adaptive) {
+                    width: 10.5%;
+                    left: 24.5% !important;
+                    top: 36.9% !important;
+                }
+            }
+        }
+    }
+}
+
+//  SASS INHERITANCE  @extend @mixin, e.g. clearfix
+//=============================
+//GENERATED CONTENT   content
+//=============================
+// POSITION AND LAYOUT   position z-index top bottom left right Flexbox properties float clear
+//=============================
+// DISPLAY AND VISIBILITY display opacity transform
+//=============================
+// CLIPPING overflow clip
+//=============================
+// ANIMATION animation transition
+//=============================
+// BOX MODEL (FROM OUTSIDE IN)  margin box-shadow border border-radius box-sizing width height padding
+//=============================
+// BACKGROUND background cursor
+//=============================
+// TYPOGRAPHY font-size line-height font-family font-weight font-style text-align text-transform word-spacing color
+//=============================
+// PSEUDO-CLASSES & PSEUDO-ELEMENTS (NESTED RULES) :hover :focus :active :before :after :first-child :last-child
+// ======================================================

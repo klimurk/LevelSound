@@ -1,0 +1,239 @@
+// @import "_mixins";
+// @import "_animations";
+:root {
+    --anim-size1: 1.5;
+    --anim-size2: 1.2;
+    --anim-size3: 1.1;
+    --anim-size4: 0.9;
+    --anim-size5: 1.4;
+    --anim-size6: 1.5;
+    --anim-size7: 1.1;
+    --vh100: 1px;
+    --fullvh: 1px;
+    --resizeVh: 1px;
+    --anim-num1: 0;
+    --num-top: '00000';
+    --num-low: '00000';
+    --works-player-text-size: 0;
+    --menu-bckgr-im-1: none;
+    --menu-bckgr-im-2: none;
+    --menu-bckgr-im-3: none;
+    --menu-bckgr-im-4: none;
+    --menu-bckgr-im-5: none;
+    --menu-bckgr-im-6: none;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.43;
+    background-color: $backgroundMain;
+    &::-webkit-scrollbar {
+        width: 0.5vw;
+        /* width of the entire scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+        background: $backgroundMain;
+        /* color of the tracking area */
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $themecolor1;
+        /* color of the scroll thumb */
+        border-radius: 0;
+        /* roundness of the scroll thumb */
+        border: 0 solid transparent;
+        /* creates padding around scroll thumb */
+    }
+}
+
+@import "_mixins";
+@import "_animations";
+
+/*     Container
+============================= */
+
+.container {
+    margin: 0 $margin_horizontal_device;
+    @media(max-width: $width_adaptive) {
+        margin: 0 $margin_horizontal_phone;
+    }
+    position: relative;
+}
+
+.title_fullwidth {
+    @extend %h1title;
+    display: block;
+    width: 100%;
+    color: $themecolor2;
+    background-color: $backgroundMain;
+    font-size: 9.9vw;
+    text-align: center;
+    white-space: nowrap;
+    @media(max-width: $width_adaptive) {
+        font-size: 6.9vw;
+    }
+}
+
+//     Buttons
+//=============================
+.btn_lvl {
+    display: inline-block;
+    transition: box-shadow .2s linear;
+    background: $themecolor1;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    color: $themecolor2;
+    font-size: $btnFont;
+    line-height: 1.1;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 79px 175px rgba(234, 15, 15, 0.16), 0px 39.5386px 104.074px rgba(234, 15, 15, 0.121653), 0px 23.8162px 67.996px rgba(234, 15, 15, 0.104254), 0px 15.2627px 42.419px rgba(234, 15, 15, 0.0913432), 0px 9.89203px 23.2766px rgba(234, 15, 15, 0.08), 0px 6.22692px 9.19345px rgba(234, 15, 15, 0.0686568), 0px 3.57775px 0px rgba(234, 15, 15, 0.0557458), 0px 1.57466px 0px rgba(234, 15, 15, 0.0383468);
+    }
+    @media(max-width: $width_adaptive) {
+        // width: 100%;
+        width: 80%;
+        margin: 0 10%;
+    }
+}
+
+.Topnum,
+.Btmnum {
+    font-family: 'Monument Extended', sans-serif;
+    font-weight: normal;
+    font-size: 24/1920*100vw;
+    color: $backgroundMain;
+}
+
+.body__inner {
+    @include makeitflex( column, flex-start);
+    overflow: hidden;
+    opacity: 0;
+    min-height: calc(var(--fullvh)*100);
+    padding-top: calc(var(--fullvh, 1vh)*15);
+    @media(max-width: $width_adaptive) {
+        // min-height: calc(var(--fullvh)*80);
+        padding-top: calc(var(--fullvh, 1vh)*20);
+    }
+}
+
+.contactform_response {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    opacity: 1;
+    background-color: rgba($backgroundMain, 0.5);
+    color: $themecolor2;
+    margin: 0;
+    &_inner {
+        @include makeitflex(column, space-between);
+        @extend %text;
+        font-size: 14/1920*100vw;
+        width: 500/1920*100vw;
+        height: 500/1920*100vw;
+        padding: 4vw;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $themecolor2;
+        color: $backgroundMain;
+        line-height: 20/14*100%;
+        z-index: 2;
+        @media(max-width: $width_adaptive) {
+            width: 60vw;
+            height: 40vh;
+        }
+    }
+    &_text {
+        @extend %text;
+        @media(max-width: $width_adaptive) {
+            font-size: 2vw;
+            line-height: 1.5;
+        }
+    }
+    &_num {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        color: $themecolor2;
+        transform: translate(-300%, -1540%);
+        @media(max-width: $width_adaptive) {
+            font-size: 2vw;
+            transform: translate(-350%, -1720%);
+        }
+    }
+    .btn_ok {
+        @media(max-width: $width_adaptive) {
+            font-size: 2vw;
+            width: 100%;
+            margin: 0;
+        }
+    }
+    .svg_smile {
+        width: 171/1920*100vw;
+        height: 171/1920*100vw;
+        align-self: center;
+        @media(max-width: $width_adaptive) {
+            width: 30vw;
+            height: 30vw;
+        }
+    }
+    .btn_cross {
+        width: 20/1920*100vw;
+        height: 20/1920*100vw;
+        position: absolute;
+        right: 10%;
+        top: 10%;
+        background-color: transparent;
+        border: none;
+        &:hover {
+            cursor: pointer;
+        }
+        @media(max-width: $width_adaptive) {
+            width: 1vw;
+            height: 1vw;
+        }
+    }
+    .submit_decor {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        fill: none;
+        @media(max-width: $width_adaptive) {
+            width: 90vw;
+        }
+    }
+}
+
+.block {
+    //  SASS INHERITANCE  @extend @mixin, e.g. clearfix
+    //=============================
+    //GENERATED CONTENT   content
+    //=============================
+    // POSITION AND LAYOUT   position z-index top bottom left right Flexbox properties float clear
+    //=============================
+    // DISPLAY AND VISIBILITY display opacity transform
+    //=============================
+    // CLIPPING overflow clip
+    //=============================
+    // ANIMATION animation transition
+    //=============================
+    // BOX MODEL (FROM OUTSIDE IN)  margin box-shadow border border-radius box-sizing width height padding
+    //=============================
+    // BACKGROUND background cursor
+    //=============================
+    // TYPOGRAPHY font-size line-height font-family font-weight font-style text-align text-transform word-spacing color
+    //=============================
+    // PSEUDO-CLASSES & PSEUDO-ELEMENTS (NESTED RULES) :hover :focus :active :before :after :first-child :last-child
+    // ======================================================
+}
